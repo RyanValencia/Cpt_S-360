@@ -1,0 +1,5 @@
+./mydisk
+cc main.c
+./a.out
+
+

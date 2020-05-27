@@ -1,0 +1,40 @@
+
+                 CS360 Project Level-2 Check List
+
+1. Download ~samples/LEVEL2/mydisk. Use it as diskimage for testing
+                              |-file1 : an empty file
+			      |-tiny  : a few lines of text, only 1 data block
+			      |-small : with 2 direct data blocks
+			      |-large : with Indirect data blocks
+			      |-huge  : with Double-Indirect data blocks
+
+
+A. IF YOU can do 2,3,4 below, you are done, skip Part B below
+
+2. Test YOUR cat:
+    cat tiny, cat small, cat large, cat huge: SEE OUTPUTS? __cat tiny, cat small, and cat huge work__ 40
+
+3. Test YOUR cp:  
+    cp small newsmall; ls: newsmall exist? SAME SIZE? _exist and same size_ 10
+    cp large newlarge; ls: newlarge exist? SAME SIZE? _exist and same size_ 20
+    cp huge newhuge;   ls: newhuge  exist? SAME SIZE? _exist and same size_ 30
+
+4. Enter quit to exit YOUR program. Check YOUR cp results under Linux:
+		
+	 sudo mount mydisk /mnt           
+	 sudo ls -l /mnt                   # should see all files
+	 sudo diff /mnt/huge /mnt/newhuge  # diff will show differences, if ANY
+	 sudo umount /mnt
+
+    cp large and huge had differences
+===============================================================================
+
+B. IF you can NOT cat, cp correctly, do the following  - all of the following works
+
+5. Show your open, pfd, close                                               20
+
+6. Show you can open small for READ; read a few times from the opened fd    20 
+
+7. SHow you can open file1 for WRITE; write a few times to the opened fd    20
+
+==============================================================================
